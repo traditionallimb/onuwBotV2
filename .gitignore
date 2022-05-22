@@ -3,3 +3,4 @@ dotos.py
 onuwbot.log
 
 __pycache__
+*.pyc

@@ -20,7 +20,7 @@ def get_prefix(bot, message):
 
 loadup_extensions = ['cogs.simple']
 
-bot = commands.Bot(command_prefix=get_prefix)
+bot = commands.Bot(command_prefix=get_prefix, owner_id=dotos.OWNER_ID)
 
 if __name__ == '__main__':
     for extension in loadup_extensions:
@@ -35,4 +35,4 @@ async def on_ready():
     await bot.change_presence(status=nextcord.Status.online, activity=game)
     print('Successfully logged in and booted...!')
 
-bot.run(dotos.token, reconnect=True)
+bot.run(dotos.TOKEN, reconnect=True)
