@@ -1,5 +1,4 @@
 #modules
-from unicodedata import name
 import nextcord
 from nextcord.ext import commands
 import logging
@@ -31,7 +30,7 @@ if __name__ == '__main__':
 @bot.event
 async def on_ready():
     print(f'\n\nLogged in as {bot.user.name} - {bot.user.id}\nVersion: {nextcord.__version__}')
-    game = nextcord.Game('Among Us')
+    game = nextcord.Game('With Your Balls')
     await bot.change_presence(status=nextcord.Status.online, activity=game)
     print('Successfully logged in and booted...!')
 

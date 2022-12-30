@@ -1,7 +1,6 @@
 import nextcord
 from nextcord.ext import commands
 from nextcord.ext import application_checks
-import dotos
 
 class SimpleCog(commands.Cog):
     def __init__(self, bot):
@@ -15,14 +14,12 @@ class SimpleCog(commands.Cog):
     async def do_ping(self, ctx):
         await ctx.send('Pong!')
 
-
-    bot = commands.Bot(owner_id=dotos.OWNER_ID)
-    @application_checks.has_permissions(administrator=True)
+    bot = commands.Bot(command_prefix="~", owner_id="398821987277078529")
+    @commands.is_owner()
     @commands.command(name='bonk')
     async def do_bonk(self, ctx):
         await ctx.send('Shutting the bot down!')
         await self.bot.close()
-
 
 def setup(bot):
     bot.add_cog(SimpleCog(bot))
